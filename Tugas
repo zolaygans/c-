@@ -1,0 +1,550 @@
+#include <iostream>
+#include <iomanip>
+#include <limits>
+#include <algorithm>
+
+using namespace std;
+
+void pembuat()
+{
+	cout << endl;
+	cout << "Zulfikar Muhammad F" << endl;
+    cout << "NIM: 1501623034" << endl;
+    cout << endl;
+}
+
+void konversiTemperatur() 
+{
+    int suhu;
+    double inputTemp, result;
+    cout << "Pilihan Konversi Suhu:" << endl;
+    cout << "11  Celsius ke Reamur atau sebaliknya" << endl;
+    cout << "12  Celsius ke Fahrenheit atau sebaliknya" << endl;
+    cout << "13  Celsius ke Kelvin atau sebaliknya" << endl;
+    cout << "14  Reamur ke Fahrenheit atau sebaliknya" << endl;
+    cout << "15. Reaur ke Kelvin atau sebaliknya" << endl;
+    cout << "16 Fahrenheit ke Kelvin atau sebaliknya" << endl;
+    cout << "Pilih konversi (11-16): ";
+    cin >> suhu;
+
+    switch (suhu) {
+        case 11:
+        	int CR; //CR= konversi C ke R
+        	cout << "1. Celsius ke Reamur" << endl;
+   			cout << "2. Reamur ke Celcius" << endl;
+            cout << "Pilih konversi (1-2): ";
+            cin >> CR;
+            if (CR == 1 || CR == 2)
+            {
+            	cout << "Masukkan nilai suhu = ";
+            	cin >> inputTemp;
+			}
+            if (CR == 1) // Konversi Celsius ke Reamur
+            {
+            	result = inputTemp * 0.8;
+            	cout << "Hasil konversi Celcius ke Reamur: " << result << endl;
+			}
+            if (CR == 2) // Konversi Reamur ke Celsius
+            {
+				result = inputTemp / 0.8;
+            	cout << "Hasil konversi Reamur ke Celsius: " << result << endl;
+            }
+            break;
+        case 12:
+        	int CF; //CF= konversi C ke F
+        	cout << "1. Celsius ke Fahrenheit" << endl;
+   			cout << "2. Fahrenheit ke Celcius" << endl;
+            cout << "Pilih konversi (1-2): ";
+            cin >> CF;
+            if (CF == 1 || CF == 2)
+            {
+            	cout << "Masukkan nilai suhu = ";
+            	cin >> inputTemp;
+			}
+            if (CF == 1) // Konversi Celsius ke F
+            {
+            	result = (inputTemp *9/5)+32;
+            	cout << "Hasil konversi Celcius ke Fahrenheit: " << result << endl;
+			}
+            if (CF == 2) // Konversi F ke Celsius
+            {
+				result = (inputTemp -32)*5/9;
+            	cout << "Hasil konversi Fahrenheit ke Celsius: " << result << endl;
+            }
+            break;
+        case 13:
+            // Implementasi konversi lainnya (Celsius ke Kelvin, dll.)
+            int CK; //CK= konversi C ke K
+        	cout << "1. Celsius ke Kelvin" << endl;
+   			cout << "2. Kelvin ke Celcius" << endl;
+            cout << "Pilih konversi (1-2): ";
+            cin >> CK;
+            if (CK == 1 || CK == 2)
+            {
+            	cout << "Masukkan nilai suhu = ";
+            	cin >> inputTemp;
+			}
+            if (CK == 1) // Konversi Celsius ke Kelvin
+            {
+            	result = inputTemp +273.15;
+            	cout << "Hasil konversi Celcius ke Kelvin: " << result << endl;
+			}
+            if (CK == 2) // Konversi Kelvin ke Celsius
+            {
+				result = inputTemp -273.15;
+            	cout << "Hasil konversi Kelvin ke Celsius: " << result << endl;
+            }
+            break;
+        case 14:
+            // Implementasi konversi lainnya (Reamur ke Fahrenheit, dll.)
+            int RF; //RF= konversi R ke F
+        	cout << "1. Reamur ke Fahrenheit" << endl;
+   			cout << "2. Fahrenheit ke Reamur" << endl;
+            cout << "Pilih konversi (1-2): ";
+            cin >> RF;
+            if (RF == 1 || RF == 2)
+            {
+            	cout << "Masukkan nilai suhu = ";
+            	cin >> inputTemp;
+			}
+            if (RF == 1) 
+            {
+            	result = (inputTemp *9/4) +32;
+            	cout << "Hasil konversi Reamur ke Fahrenheit: " << result << endl;
+			}
+            if (RF == 2) 
+            {
+				result = (inputTemp -32) *4/9;
+            	cout << "Hasil konversi Fahrenheit ke Reamur: " << result << endl;
+            }
+            break;
+        case 15:
+            // Implementasi konversi lainnya (Reamur ke Kelvin, dll.)
+            int RK; //RF= konversi R ke K
+        	cout << "1. Reamur ke Kelvin" << endl;
+   			cout << "2. Kelvin ke Reamur" << endl;
+            cout << "Pilih konversi (1-2): ";
+            cin >> RK;
+            if (RK == 1 || RK == 2)
+            {
+            	cout << "Masukkan nilai suhu = ";
+            	cin >> inputTemp;
+			}
+            if (RK == 1) 
+            {
+            	result = (inputTemp *5/4) +273.15;
+            	cout << "Hasil konversi Reamur ke Kelvin: " << result << endl;
+			}
+            if (RK == 2) 
+            {
+				result = (inputTemp -273.15) *4/5;
+            	cout << "Hasil konversi Kelvin ke Reamur: " << result << endl;
+            }
+            break;
+        case 16:
+            // Implementasi konversi lainnya (Fahrenheit ke Kelvin, dll.)
+            int FK; //FK= konversi R ke K
+        	cout << "1. Fahrenheit ke Kelvin" << endl;
+   			cout << "2. Kelvin ke Fahrenheit" << endl;
+            cout << "Pilih konversi (1-2): ";
+            cin >> FK;
+            if (FK == 1 || FK == 2)
+            {
+            	cout << "Masukkan nilai suhu = ";
+            	cin >> inputTemp;
+			}
+            if (FK == 1) 
+            {
+            	result = (inputTemp -32) *5/9+273.15;
+            	cout << "Hasil konversi Fahrenheit ke Kelvin: " << result << endl;
+			}
+            if (FK == 2) 
+            {
+				result = (inputTemp -273.15) *9/5+32;
+            	cout << "Hasil konversi Kelvin ke Fahrenheit: " << result << endl;
+            }
+            break;
+        default:
+            cout << "404: Page not found." << endl;
+      }
+}
+
+void cariBilangan() {
+    // Implementasi pencarian bilangan terbesar atau terkecil
+    int n;
+
+    // Input jumlah bilangan
+    std::cout << "Masukkan jumlah bilangan: ";
+    std::cin >> n;
+
+    int arr[n];
+
+    // Input bilangan-bilangan
+    std::cout << "Masukkan bilangan-bilangan:\n";
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Bilangan ke-" << i + 1 << ": ";
+        std::cin >> arr[i];
+    }
+
+    // Inisialisasi bilangan terbesar dan terkecil
+    int terbesar = arr[0];
+    int terkecil = arr[0];
+
+    // Mencari bilangan terbesar dan terkecil
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] > terbesar) {
+            terbesar = arr[i];
+        }
+        if (arr[i] < terkecil) {
+            terkecil = arr[i];
+        }
+    }
+
+    // Menampilkan hasil
+    std::cout << "Bilangan terbesar: " << terbesar << "\n";
+    std::cout << "Bilangan terkecil: " << terkecil << "\n";
+}
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void urutkanBilangan() {
+    // Implementasi pengurutan bilangan
+    std::vector<int> numbers;
+
+    // Masukkan bilangan ke dalam vektor
+    numbers.push_back(5);
+    numbers.push_back(2);
+    numbers.push_back(8);
+    numbers.push_back(1);
+    numbers.push_back(3);
+
+    // Menguraikan dari yang terkecil ke terbesar
+    std::sort(numbers.begin(), numbers.end());
+
+    // Menampilkan hasil
+    std::cout << "Dari yang terkecil ke terbesar: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    // Menguraikan dari yang terbesar ke terkecil
+    std::sort(numbers.rbegin(), numbers.rend());
+
+    // Menampilkan hasil
+    std::cout << "Dari yang terbesar ke terkecil: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+}
+
+
+void seriParallel() {
+    // Implementasi rangkaian seri dan parallel
+    int resistor1, k, f, vin;
+    float resistor2, Rpengganti, Itotal, Rseri, Rtotal;
+
+    cout << endl;
+    cout << "PROGRAM MENGHITUNG RANGKAIAN SERI PARALEL" << endl;
+    cout << endl;
+    do
+    {
+    	cout << "Masukkan jumlah resistor yang diparalel = ";
+   		cin >> k;
+   		if (k < 2)
+   		{
+   			cout << "Jumlah harus lebih dari 2" << endl;
+		}
+	} 
+	while (k < 2);
+	
+    cout << "Masukkan nilai tegangan input = ";
+    cin >> vin;
+    cout << "Masukkan jumlah resistor yang diseri = ";
+    cin >> f;
+
+    resistor1 = 1;
+    resistor2 = 0;
+    Rseri = 0;
+
+    int a[k];
+    float b[k];
+
+    for (int i = 0; i < k; i++) {
+        cout << "Resistor paralel ke " << i + 1 << " = ";
+        cin >> a[i];
+        resistor1 *= a[i];
+    }
+
+    int d[f];
+    for (int i = 0; i < f; i++) {
+        cout << "Resistor seri ke " << i + 1 << " = ";
+        cin >> d[i];
+        Rseri += d[i];
+    }
+
+    for (int i = 0; i < k; i++) {
+        b[i] = static_cast<float>(resistor1) / a[i];
+        resistor2 += b[i];
+    }
+
+    Rpengganti = resistor1 / resistor2;
+    Rtotal = Rpengganti + Rseri;
+    Itotal = vin / Rtotal;
+
+    cout << "Maka nilai resistor pengganti = " << Rpengganti << " Ohm" << endl;
+    cout << "Maka nilai resistor seri = " << Rseri << " Ohm" << endl;
+    cout << "Maka nilai resistor total = " << Rtotal << " Ohm" << endl;
+    cout << "Maka arus total = " << Itotal << " A" << endl;
+
+    for (int i = 0; i < k; i++) {
+        float C = (Itotal * Rpengganti) / a[i];
+        cout << "Arus ke " << i + 1 << " = " << C << " A" << endl;
+    }
+}
+
+#include <iostream>
+#include <iomanip>
+#include <limits>
+#include <algorithm>
+#include <string>
+#include <vector>
+
+struct Item {
+    std::string name;
+    std::string type;
+    int year;
+    std::string entryDate;
+    std::string status;
+    int quantity;
+};
+
+class inventory {
+private:
+    std::vector<Item> items;
+
+public:
+    void addReport() {
+        Item newItem;
+        std::cout << "Nama barang: ";
+        std::cin >> newItem.name;
+        std::cout << "Jenis barang/alat: ";
+        std::cin >> newItem.type;
+        std::cout << "Tahun Pembuatan: ";
+        std::cin >> newItem.year;
+        std::cout << "Tanggal barang/alat masuk: ";
+        std::cin >> newItem.entryDate;
+        std::cout << "Status (berfungsi/perlu perbaikan/rusak): ";
+        std::cin >> newItem.status;
+        std::cout << "Jumlah barang: ";
+        std::cin >> newItem.quantity;
+
+        items.push_back(newItem);
+    }
+
+    void lendItem() {
+        std::string itemName;
+        int quantity;
+
+        std::cout << "Nama barang yang dipinjam: ";
+        std::cin >> itemName;
+        std::cout << "Jumlah barang yang dipinjam: ";
+        std::cin >> quantity;
+
+        for (auto& item : items) {
+            if (item.name == itemName && item.quantity >= quantity) {
+                item.quantity -= quantity;
+                std::cout << "Peminjaman berhasil.\n";
+                return;
+            }
+        }
+
+        std::cout << "Barang tidak tersedia atau jumlah tidak mencukupi.\n";
+    }
+
+    void checkStock() const {
+        for (const auto& item : items) {
+            std::cout << "Nama barang: " << item.name << ", Jenis barang/alat: " << item.type
+                      << ", Jumlah tersedia: " << item.quantity << std::endl;
+        }
+    }
+
+    void makePayment() {
+        std::string itemName;
+        int quantity;
+
+        std::cout << "Nama barang yang dibayar: ";
+        std::cin >> itemName;
+        std::cout << "Jumlah barang yang dibayar: ";
+        std::cin >> quantity;
+
+        for (auto& item : items) {
+            if (item.name == itemName) {
+                // Assuming each item has a fixed price, you can calculate the total cost
+                int hargaPerBarang;  // Menambahkan variabel untuk menyimpan harga per barang
+                std::cout << "Harga per barang untuk " << item.name << ": ";
+                std::cin >> hargaPerBarang;
+
+                int totalPrice = quantity * hargaPerBarang;
+
+                std::cout << "Total biaya: " << totalPrice << " (Harga per barang: " << hargaPerBarang << ")\n";
+
+                // Here, you can implement your payment logic
+                // For simplicity, let's just update the quantity as if the payment is successful
+                if (item.quantity >= quantity) {
+                    item.quantity -= quantity;
+                    std::cout << "Pembayaran berhasil.\n";
+                } else {
+                    std::cout << "Jumlah barang yang dibayar melebihi stok.\n";
+                }
+
+                return;
+            }
+        }
+
+        std::cout << "Barang tidak ditemukan.\n";
+    }
+};
+
+void manageinventory() {
+    inventory myinventory;
+    int inventoryOption;
+
+    do {
+        cout << "Menu Inventory:" << endl;
+        cout << "1. Tambah Barang" << endl;
+        cout << "2. Pinjam Barang" << endl;
+        cout << "3. Cek Stok" << endl;
+        cout << "4. Bayar Barang" << endl;
+        cout << "0. Kembali ke Menu Utama" << endl;
+        cout << "Pilih opsi (0-4): ";
+        cin >> inventoryOption;
+
+        switch (inventoryOption) {
+            case 1:
+                myinventory.addReport();
+                break;
+            case 2:
+                myinventory.lendItem();
+                break;
+            case 3:
+                myinventory.checkStock();
+                break;
+            case 4:
+                myinventory.makePayment();
+                break;
+            case 0:
+                cout << "Kembali ke Menu Utama.\n";
+                break;
+            default:
+                cout << "Pilihan tidak valid. Silakan masukkan pilihan dari 0 hingga 4." << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    } while (inventoryOption != 0);
+}
+
+
+void jumlahMatriks() {
+    // Implementasi penjumlahan matriks/vector
+    int baris, kolom;
+    int m1[10][10], m2[10][10], hasil[10][10];
+
+    cout << "Operasi Penjumlahan Matriks" << endl;
+    do {
+        cout << "Jumlah Baris = ";
+        cin >> baris;
+        cout << "Jumlah Kolom = ";
+        cin >> kolom;
+    } while (baris > 10 || kolom > 10);
+
+    cout << "\nMatrix A" << endl;
+    for (int x = 0; x < baris; x++) {
+        for (int y = 0; y < kolom; y++) {
+            cout << "Data[" << x << "," << y << "] = ";
+            cin >> m1[x][y];
+        }
+    }
+
+    cout << "\nMatrix B" << endl;
+    for (int x = 0; x < baris; x++) {
+        for (int y = 0; y < kolom; y++) {
+            cout << "Data[" << x << "," << y << "] = ";
+            cin >> m2[x][y];
+        }
+    }
+
+    for (int x = 0; x < baris; x++) {
+        for (int y = 0; y < kolom; y++) {
+            hasil[x][y] = m1[x][y] + m2[x][y];
+        }
+    }
+
+    cout << "\nHasilnya..." << endl;
+    cout << "Matrix A + Matrix B = Matrix C" << endl;
+    for (int x = 0; x < baris; x++) {
+        cout << endl;
+        for (int y = 0; y < kolom; y++) {
+            cout << setw(4) << m1[x][y];
+        }
+        cout << "   ";
+        for (int y = 0; y < kolom; y++) {
+            cout << setw(4) << m2[x][y];
+        }
+        cout << "   ";
+        for (int y = 0; y < kolom; y++) {
+            cout << setw(4) << hasil[x][y];
+        }
+        cout << endl;
+    }
+}
+
+
+int main() {
+    int program;
+    do {
+    	pembuat();
+        cout << "Menu Program:" << endl;
+        cout << "1. Konversi Besaran Suhu" << endl;
+        cout << "2. Mencari Bilangan Terbesar atau Terkecil" << endl;
+        cout << "3. Mengurutkan Bilangan" << endl;
+        cout << "4. Rangkaian Seri dan Parallel" << endl;
+        cout << "5. Inventory" << endl;
+        cout << "6. Penjumlahan Matriks/Vector" << endl;
+        cout << "Pilih program (1-6): ";
+        cin >> program;
+
+        switch(program) {
+            case 1:
+                konversiTemperatur();
+                break;
+            case 2:
+                cariBilangan();
+                break;
+            case 3:
+                urutkanBilangan();
+                break;
+            case 4:
+                seriParallel();
+                break;
+            case 5:
+                manageinventory();
+                break;
+            case 6:
+                jumlahMatriks();
+                break;
+            case 7:
+            	 pembuat();
+            	 break;
+            default:
+                cout << "Pilihan tidak valid. Silakan masukkan pilihan dari 1 hingga 6." << endl;
+                cin.clear(); 
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    } while(program >= 1 || program <= 6);
+
+    return 0;
+}
